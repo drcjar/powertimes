@@ -17,7 +17,7 @@ prop_occupation <- rep(1 / n_occupations, n_occupations)  # Equal proportion for
 
 # Initial sample size and step size
 start_n <- 10000
-step_size <- 5000
+step_size <- 10000
 
 # Function to simulate data and calculate p-value for interaction term
 simulate_power_cox <- function(n, beta_occupation, beta_smoking, beta_interaction, 
