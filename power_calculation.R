@@ -3,7 +3,7 @@ library(survival)
 library(MASS)
 
 # Parameters
-n_sim <- 10  # Reduced number of simulations for testing
+n_sim <- 100  # Reduced number of simulations for testing
 beta_occupation <- log(2)  # 'Doubling of risk' accepted criterion for attribution
 beta_smoking <- log(5)  # Odds ratio for 'ever smoking' https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3505152/
 beta_interaction <- log(2)  # Interaction effect
