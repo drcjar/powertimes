@@ -28,11 +28,15 @@ simulate_power_cox <- function(n, beta_occupation, beta_smoking, beta_interactio
   smoking <- rbinom(n, 1, prop_smokers)
   age <- rnorm(n, mean = 50, sd = 10)  # Assuming a normal distribution for age
   sex <- rbinom(n, 1, 0.5)  # Assuming equal proportion of males and females
-
-  # Calculate hazard
+  
+  # Simulate random error term
+  error_term <- rnorm(n, mean = 0, sd = 1)  # Mean 0 and some standard deviation
+  
+  # Calculate hazard with added error term
   hazard <- baseline_hazard * exp(beta_occupation * as.numeric(occupation == 1) + 
-                                  beta_smoking * smoking + 
-                                  beta_interaction * as.numeric(occupation == 1) * smoking)
+                                beta_smoking * smoking + 
+                                beta_interaction * as.numeric(occupation == 1) * smoking + 
+                                error_term)
   
   # Simulate survival times and censoring
   survival_time <- rexp(n, rate = hazard)
