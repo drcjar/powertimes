@@ -1,0 +1,3 @@
+working out required sample size through simulation in R...
+
+or you could just use something like https://epitools.ausvet.com.au/samplesize or a 'rule of thumb' https://stats.stackexchange.com/questions/559403/survival-analysis-with-rare-events
